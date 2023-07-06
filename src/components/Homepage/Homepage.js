@@ -13,7 +13,7 @@ const Homepage = ({ movies }) => {
 
     const homePosters = movies.map(movie => {
         return (
-            <MoviePoster title={movie.title} poster={movie.poster_path} id={movie.id}/>
+            <MoviePoster title={movie.title} poster={movie.poster_path} key={movie.id}/>
         )
     })
 
