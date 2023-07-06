@@ -1,0 +1,16 @@
+.poster > img {
+    height: 200px;
+    width: 133px;
+    align-self: center;
+    
+}
+
+.poster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 230px;
+    width: 150px;
+}
+
