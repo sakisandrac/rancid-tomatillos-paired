@@ -2,7 +2,12 @@
     height: 200px;
     width: 133px;
     align-self: center;
-    
+    transition: .2s ease all;
+}
+
+.poster > img:hover {
+    cursor: pointer;
+    opacity: .8;
 }
 
 .poster {

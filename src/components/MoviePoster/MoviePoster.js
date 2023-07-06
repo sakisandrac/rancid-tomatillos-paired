@@ -3,7 +3,7 @@ import './MoviePoster.css'
 
 const MoviePoster = ({title, poster, id}) => {
     const handleClick = (id) => {
-        alert('clicked: ', id)
+        console.log(id)
     }
 
     return (
