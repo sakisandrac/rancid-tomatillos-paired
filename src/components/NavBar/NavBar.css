@@ -1,0 +1,12 @@
+.nav-bar {
+  background-color: #89023E;
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0 15px;
+  color: white;
+}
