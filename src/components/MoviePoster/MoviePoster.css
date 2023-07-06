@@ -1,0 +1,19 @@
+.poster > img {
+    height: 220px;
+    width: 153px;
+    align-self: center;
+    transition: .2s ease all;
+}
+
+.poster > img:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.poster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
