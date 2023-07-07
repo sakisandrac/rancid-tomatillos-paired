@@ -8,4 +8,4 @@ const getMovies = async () => {
     return data
 }
 
-export {getMovies};
+export { getMovies };
