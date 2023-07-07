@@ -11,7 +11,7 @@
 .movies-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: .5rem;
+    gap: 1rem;
     margin: 1rem;
     align-items: start;
 }

@@ -12,8 +12,8 @@ export const MovieDetails = ({currentMovie, toHomepage}) => {
         <p className='movie-title'>{currentMovie[0].title}</p>
       </div>
       <div className='movie-details-container'>
-        <p>Rating: {currentMovie[0].average_rating.toFixed(2)}</p>
-        <p>Release Date: {currentMovie[0].release_date}</p>
+        <p className='detail-text'>Rating: {currentMovie[0].average_rating.toFixed(2)}</p>
+        <p className='detail-text'>Release Date: {currentMovie[0].release_date}</p>
       </div>
     </article>
   )

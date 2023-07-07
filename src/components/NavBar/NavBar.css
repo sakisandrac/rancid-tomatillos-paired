@@ -1,5 +1,7 @@
 .nav-bar-topper {
-  background-color: black;
+  background-color: #EA638C;
+  display: flex;
+  justify-content: center;
 }
 
 marquee {
@@ -22,10 +24,16 @@ marquee {
 
 .nav-logo {
   height: 90px;
+  margin-left: 15px;
 }
 
 .nav-link {
   margin: 0 15px;
   color: white;
   font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #EA638C;
+  cursor: pointer;
 }
