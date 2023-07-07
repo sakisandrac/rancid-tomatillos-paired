@@ -17,6 +17,8 @@
     text-align: center;
 }
 
-figurecaption {
+.movie-title-homepage {
     color: white;
+    background-color: #EA638C;
+    border-radius: 20px;
 }

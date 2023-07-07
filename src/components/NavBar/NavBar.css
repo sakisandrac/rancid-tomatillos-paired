@@ -1,3 +1,17 @@
+.nav-bar-topper {
+  background-color: black;
+}
+
+marquee {
+  max-width: 500px;
+}
+
+.marquee-text {
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
 .nav-bar {
   background-color: #89023E;
   height: 100px;
@@ -6,7 +20,12 @@
   align-items: center;
 }
 
-p {
+.nav-logo {
+  height: 90px;
+}
+
+.nav-link {
   margin: 0 15px;
   color: white;
+  font-weight: 600;
 }
