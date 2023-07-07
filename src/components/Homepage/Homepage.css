@@ -16,6 +16,11 @@
     align-items: start;
 }
 
+.error {
+    text-align: center;
+    font-size: 2rem;
+}
+
 .current-movie-container {
     display: flex;
     justify-content: center;
