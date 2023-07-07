@@ -1,0 +1,39 @@
+.nav-bar-topper {
+  background-color: #EA638C;
+  display: flex;
+  justify-content: center;
+}
+
+marquee {
+  max-width: 500px;
+}
+
+.marquee-text {
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.nav-bar {
+  background-color: #89023E;
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 90px;
+  margin-left: 15px;
+}
+
+.nav-link {
+  margin: 0 15px;
+  color: white;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #EA638C;
+  cursor: pointer;
+}
