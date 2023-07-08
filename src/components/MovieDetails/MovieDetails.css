@@ -51,5 +51,12 @@
 
 .movie-details-container {
   display: flex;
-  
+}
+
+.movie-stats-container {
+  width: 30%;
+}
+
+.movie-summary-container {
+  width: 70%;
 }

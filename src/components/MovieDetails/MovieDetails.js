@@ -8,6 +8,8 @@ export const MovieDetails = ({id, toHomepage}) => {
   const [currentMovie, setCurrentMovie] = useState(null)
   const [error, setError] = useState({isError:false, message: ''})
 
+  let dollarUSLocale = Intl.NumberFormat('en-US');
+
   useEffect(() => {
     getSingleMovie(id).then(data => {
       setCurrentMovie(data.movie)
@@ -23,19 +25,26 @@ export const MovieDetails = ({id, toHomepage}) => {
           <img className='movie-backdrop' src={currentMovie.backdrop_path}></img>
           <p className='movie-title'>{currentMovie.title}</p>
         </div>
+        <div className='movie-genres-container'>
+          <p>{currentMovie.genres}</p>
+        </div>
         <div className='movie-details-container'>
           <div className='movie-stats-container'>
-            <p>Rating: {currentMovie.average_rating.toFixed(2)}</p>
             <p>Release Date: {currentMovie.release_date}</p>
+            <p>Rating: {currentMovie.average_rating.toFixed(2)}/10</p>
+            <p>Runtime: {currentMovie.runtime} mins</p>
           </div>
           <div className='movie-summary-container'>
-            <p>Summary: {currentMovie.overview}</p>
-            <p>Revenue: {currentMovie.revenue}</p>
+            <p>{currentMovie.overview}</p>
+            <p>Budget: ${dollarUSLocale.format(currentMovie.budget)}</p>
+            <p>Revenue: ${dollarUSLocale.format(currentMovie.revenue)}</p>
           </div>
         </div>
       </article>
     )
   }
+
+  
 
   return (
     <> 
