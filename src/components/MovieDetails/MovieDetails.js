@@ -1,8 +1,8 @@
 import React from 'react';
 import './MovieDetails.css';
+import PropTypes from 'prop-types';
 
 export const MovieDetails = ({currentMovie, toHomepage}) => {
-  console.log(currentMovie)
 
   return (
     <article className='movie-details'>
@@ -17,4 +17,9 @@ export const MovieDetails = ({currentMovie, toHomepage}) => {
       </div>
     </article>
   )
+}
+
+MovieDetails.propTypes = {
+  currentMovie: PropTypes.arrayOf(PropTypes.object).isRequired,
+  toHomepage: PropTypes.func.isRequired
 }

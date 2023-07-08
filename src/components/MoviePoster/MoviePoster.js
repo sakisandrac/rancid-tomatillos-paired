@@ -1,7 +1,7 @@
-import './MoviePoster.css'
+import './MoviePoster.css';
+import PropTypes from 'prop-types';
 
-
-const MoviePoster = ({ title, poster, id, showMovieDetails}) => {
+const MoviePoster = ({title, poster, id, showMovieDetails}) => {
 
     const handleClick = (e) => {
         showMovieDetails(e.target.id)
@@ -16,3 +16,10 @@ const MoviePoster = ({ title, poster, id, showMovieDetails}) => {
 }
 
 export default MoviePoster;
+
+MoviePoster.propTypes = { 
+    title: PropTypes.string,
+    poster: PropTypes.string,
+    id: PropTypes.number,
+    showMovieDetails: PropTypes.bool
+}
