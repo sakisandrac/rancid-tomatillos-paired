@@ -32,7 +32,6 @@ export const MovieDetails = ({id, toHomepage}) => {
           <p className='movie-title'>{currentMovie.title}</p>
         </div>
         <div className='movie-genres-container'>
-          {/* <p className='movie-genre'>{currentMovie.genres}</p> */}
           {movieGenres(currentMovie)}
         </div>
         <div className='movie-details-container'>

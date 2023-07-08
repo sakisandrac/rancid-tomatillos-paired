@@ -69,6 +69,9 @@
 
 .movie-details-container {
   display: flex;
+  background-color: rgba(151, 151, 151, 0.362);
+  padding: 0px 15px;
+  border-radius: 5px;
 }
 
 .movie-stats-container {
