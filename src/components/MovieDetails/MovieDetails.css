@@ -1,3 +1,28 @@
+* {
+  color: white;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  align-items: center;
+}
+
+.back-btn {
+  width: 50px;
+  color: #000000;
+  background-color: #EA638C;
+  border: none;
+  align-self: flex-start;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
 .movie-backdrop-container {
   display: flex;
   flex-direction: column;
@@ -6,11 +31,11 @@
 }
 
 .movie-title {
-  color: white;
+  text-shadow: #000000 3px 5px 2px;
   font-size: 2.5rem;
   font-weight: 600;
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   left: 10%;
   z-index: 2;
   margin: 0;
@@ -24,6 +49,7 @@
   z-index: 1;
 }
 
-.detail-text {
-  color: white;
+.movie-details-container {
+  display: flex;
+  
 }
