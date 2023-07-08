@@ -10,9 +10,21 @@
   align-items: center;
 }
 
+.movie-genres-container {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+
+.movie-genre {
+  background-color: #EA638C;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
 .back-btn {
   width: 50px;
-  color: #000000;
+  color: white;
   background-color: #EA638C;
   border: none;
   align-self: flex-start;
@@ -26,6 +38,7 @@
 .back-btn:hover {
   cursor: pointer;
   background-color: white;
+  color: black;
 }
 
 .movie-backdrop-container {
