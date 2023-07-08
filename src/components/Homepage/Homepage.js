@@ -2,6 +2,7 @@ import './Homepage.css'
 import MoviePoster from '../MoviePoster/MoviePoster';
 import { useState } from 'react';
 import { MovieDetails } from '../MovieDetails/MovieDetails';
+import PropTypes from 'prop-types';
 
 const Homepage = ({ movies, error }) => {
 
@@ -36,3 +37,8 @@ const Homepage = ({ movies, error }) => {
 }
 
 export default Homepage;
+
+Homepage.propTypes = { 
+    movies: PropTypes.arrayOf(PropTypes.object),
+    error: PropTypes.object.isRequired
+}

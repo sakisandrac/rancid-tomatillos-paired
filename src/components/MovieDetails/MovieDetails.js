@@ -2,6 +2,7 @@ import React from 'react';
 import './MovieDetails.css';
 import { useEffect, useState } from 'react';
 import { getSingleMovie } from '../../apiCalls/apiCalls';
+import PropTypes from 'prop-types';
 
 export const MovieDetails = ({id, toHomepage}) => {
 
@@ -44,12 +45,15 @@ export const MovieDetails = ({id, toHomepage}) => {
     )
   }
 
-  
-
   return (
     <> 
     {currentMovie && renderMovieDetails()}
     {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
     </>
   )
+}
+
+MovieDetails.propTypes = {
+  currentMovie: PropTypes.arrayOf(PropTypes.object).isRequired,
+  toHomepage: PropTypes.func.isRequired
 }
