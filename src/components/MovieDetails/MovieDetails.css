@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 80%;
   align-items: center;
 }
 
@@ -16,6 +16,11 @@
   background-color: #EA638C;
   border: none;
   align-self: flex-start;
+  padding: 5px;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .back-btn:hover {
