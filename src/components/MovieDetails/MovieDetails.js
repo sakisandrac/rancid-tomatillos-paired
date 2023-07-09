@@ -38,11 +38,11 @@ export const MovieDetails = ({id, toHomepage}) => {
             <p><b>Release Date:</b> {currentMovie.release_date}</p>
             <p><b>Rating:</b> {currentMovie.average_rating}/10</p>
             <p><b>Runtime:</b> {currentMovie.runtime} mins</p>
-          </div>
-          <div className='movie-summary-container'>
-            <p>{currentMovie.overview}</p>
             {currentMovie.budget > 0 && <p><b>Budget:</b> ${dollarUSLocale.format(currentMovie.budget)}</p>}
             {currentMovie.revenue > 0 && <p><b>Revenue:</b> ${dollarUSLocale.format(currentMovie.revenue)}</p>}
+          </div>
+          <div className='movie-summary-container'>
+            <p className='summary'>{currentMovie.overview}</p>
           </div>
         </div>
       </article>
