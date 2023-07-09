@@ -18,6 +18,11 @@ export const MovieDetails = ({id, toHomepage}) => {
     .catch(err => setError({isError:true, message: err}))
   }, [])
 
+  const movieGenres = (movie) => {
+    return movie.genres.map(genre => (<p className='movie-genre'>{genre}</p>))
+  }
+
+  console.log(currentMovie)
   const renderMovieDetails = () => {
     return (
       <article className='movie-details'>
@@ -27,7 +32,7 @@ export const MovieDetails = ({id, toHomepage}) => {
           <p className='movie-title'>{currentMovie.title}</p>
         </div>
         <div className='movie-genres-container'>
-          <p>{currentMovie.genres}</p>
+          {movieGenres(currentMovie)}
         </div>
         <div className='movie-details-container'>
           <div className='movie-stats-container'>

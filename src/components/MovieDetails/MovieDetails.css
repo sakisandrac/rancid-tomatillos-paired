@@ -6,21 +6,39 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 80%;
   align-items: center;
+}
+
+.movie-genres-container {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+
+.movie-genre {
+  background-color: #EA638C;
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
 .back-btn {
   width: 50px;
-  color: #000000;
+  color: white;
   background-color: #EA638C;
   border: none;
   align-self: flex-start;
+  padding: 5px;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .back-btn:hover {
   cursor: pointer;
   background-color: white;
+  color: black;
 }
 
 .movie-backdrop-container {
@@ -51,6 +69,10 @@
 
 .movie-details-container {
   display: flex;
+  background-color: rgba(151, 151, 151, 0.362);
+  padding: 0px 15px;
+  border-radius: 5px;
+  margin-bottom: 40px;
 }
 
 .movie-stats-container {
