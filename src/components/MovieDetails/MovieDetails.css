@@ -20,6 +20,7 @@
   background-color: #EA638C;
   padding: 5px 15px;
   border-radius: 20px;
+  margin: 10px;
 }
 
 .back-btn {
@@ -61,7 +62,7 @@
 
 .movie-backdrop {
   width: 100%;
-  height: 400px;
+  height: 500px;
   max-width: 900px;
   object-fit: cover;
   z-index: 1;
@@ -71,6 +72,7 @@
   display: flex;
   background-color: rgba(151, 151, 151, 0.362);
   padding: 0px 15px;
+  max-width: 900px;
   border-radius: 5px;
   margin-bottom: 40px;
 }
