@@ -22,7 +22,6 @@ export const MovieDetails = ({id, toHomepage}) => {
     return movie.genres.map(genre => (<p className='movie-genre'>{genre}</p>))
   }
 
-  console.log(currentMovie)
   const renderMovieDetails = () => {
     return (
       <article className='movie-details'>
@@ -36,14 +35,14 @@ export const MovieDetails = ({id, toHomepage}) => {
         </div>
         <div className='movie-details-container'>
           <div className='movie-stats-container'>
-            <p>Release Date: {currentMovie.release_date}</p>
-            <p>Rating: {currentMovie.average_rating.toFixed(2)}/10</p>
-            <p>Runtime: {currentMovie.runtime} mins</p>
+            <p><b>Release Date:</b> {currentMovie.release_date}</p>
+            <p><b>Rating:</b> {currentMovie.average_rating}/10</p>
+            <p><b>Runtime:</b> {currentMovie.runtime} mins</p>
+            {currentMovie.budget > 0 && <p><b>Budget:</b> ${dollarUSLocale.format(currentMovie.budget)}</p>}
+            {currentMovie.revenue > 0 && <p><b>Revenue:</b> ${dollarUSLocale.format(currentMovie.revenue)}</p>}
           </div>
           <div className='movie-summary-container'>
-            <p>{currentMovie.overview}</p>
-            <p>Budget: ${dollarUSLocale.format(currentMovie.budget)}</p>
-            <p>Revenue: ${dollarUSLocale.format(currentMovie.revenue)}</p>
+            <p className='summary'>{currentMovie.overview}</p>
           </div>
         </div>
       </article>
@@ -59,6 +58,6 @@ export const MovieDetails = ({id, toHomepage}) => {
 }
 
 MovieDetails.propTypes = {
-  currentMovie: PropTypes.arrayOf(PropTypes.object).isRequired,
+  id: PropTypes.number.isRequired,
   toHomepage: PropTypes.func.isRequired
 }

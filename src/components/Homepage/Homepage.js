@@ -6,14 +6,14 @@ import PropTypes from 'prop-types';
 
 const Homepage = ({ movies, error }) => {
 
-    const [movieDetails, setMovieDetails] = useState(false);
+    const [movieDetails, setMovieDetails] = useState(null);
 
     const showMovieDetails = (id) => {
         setMovieDetails(id)
     }
 
     const toHomepage = () => {
-        setMovieDetails(false)
+        setMovieDetails(null)
     }
 
     const homePosters = movies.map(movie => {
