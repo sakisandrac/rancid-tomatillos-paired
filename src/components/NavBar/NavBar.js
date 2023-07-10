@@ -9,8 +9,7 @@ const NavBar = () => {
         <marquee><p className='marquee-text'>Explore Great Movies Today!</p></marquee>
       </div>
       <nav className='nav-bar'>
-        <img className='nav-logo' src={logo} />
-        <p className='nav-link'>Home</p>
+        <img className='nav-logo' src={logo} alt='Rancid Tomatillos logo'/>
       </nav>
     </div>
   )
