@@ -1,0 +1,14 @@
+{
+    "movies": [
+        {
+            "id": 436270, 
+            "title": "Black Adam", 
+            "poster_path": "https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg"
+        },
+        {
+            "id": 760104, 
+            "title": "X", 
+            "poster_path": "https://image.tmdb.org/t/p/original//woTQx9Q4b8aO13jR9dsj8C9JESy.jpg"
+        }
+    ]
+}
