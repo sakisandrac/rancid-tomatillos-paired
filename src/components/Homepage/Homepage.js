@@ -3,6 +3,7 @@ import MoviePoster from '../MoviePoster/MoviePoster';
 import { useState } from 'react';
 import { MovieDetails } from '../MovieDetails/MovieDetails';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 const Homepage = ({ movies, error }) => {
 
@@ -18,7 +19,7 @@ const Homepage = ({ movies, error }) => {
 
     const homePosters = movies.map(movie => {
         return (
-            <MoviePoster title={movie.title} poster={movie.poster_path} key={movie.id} id={movie.id} showMovieDetails={showMovieDetails}/>
+            <Link to={`/${movie.id}`} key={movie.id} ><MoviePoster title={movie.title} poster={movie.poster_path} id={movie.id} showMovieDetails={showMovieDetails}/></Link>
         )
     })
 
