@@ -18,4 +18,5 @@ describe('Homepage navigation', () => {
     cy.get('marquee').contains('p', 'Explore Great Movies Today!')
     .get('.nav-bar').find('img')
   })
+  // add check for sad path
 })
