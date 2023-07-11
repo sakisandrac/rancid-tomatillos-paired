@@ -2,7 +2,9 @@ import './App.css';
 import Homepage from '../Homepage/Homepage';
 import { useState, useEffect } from 'react';
 import NavBar from '../NavBar/NavBar';
-import { getMovies } from '../../apiCalls/apiCalls.js'
+import { getMovies } from '../../apiCalls/apiCalls.js';
+import { Routes, Route } from 'react-router-dom';
+import { MovieDetails } from '../MovieDetails/MovieDetails';
 
 const App = () => {
   const [movies, setMovies] = useState([])
@@ -19,7 +21,12 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <Homepage movies={movies} error={error}/>
+      {/* <Homepage movies={movies} error={error}/> */}
+
+      <Routes>
+        <Route path="/" element={<Homepage movies={movies} error={error}/>} />
+        <Route path="/:id" element={<MovieDetails/>} />
+      </Routes>
     </div>
   );
 }
