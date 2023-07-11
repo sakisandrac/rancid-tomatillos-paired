@@ -2,7 +2,6 @@ import React from 'react';
 import './MovieDetails.css';
 import { useEffect, useState } from 'react';
 import { getSingleMovie } from '../../apiCalls/apiCalls';
-import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 
 export const MovieDetails = () => {
@@ -58,4 +57,3 @@ export const MovieDetails = () => {
     </>
   )
 }
-
