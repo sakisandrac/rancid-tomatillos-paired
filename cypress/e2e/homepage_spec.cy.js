@@ -7,8 +7,9 @@ describe('Homepage navigation', () => {
     })
   });
   it('Should load the homepage with all movies', () => {
-    //add check for url - .url().should('include', '/')
+    //add check for url - 
     cy.get('main').contains('h1', 'Rancid Tomatillos')
+    .url().should('include', '/')
     .get('figure').first().find('img')
     .get('.movie-title-homepage').first().should('have.text', 'Black Adam')
     .get('figure').last().find('img')
@@ -18,5 +19,18 @@ describe('Homepage navigation', () => {
     cy.get('marquee').contains('p', 'Explore Great Movies Today!')
     .get('.nav-bar').find('img')
   })
-  // add check for sad path
+})
+
+describe('Error handling', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000');
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      fixture: 'homepage'
+    })
+  })
+  it('Should display an error image when a user types in the wrong address', () => {
+    cy.visit('http://localhost:3000/movies')
+    .get('p').last().should('have.text', "Sorry! Error: Internal Server Error. Please try again later.")
+  })
 })
