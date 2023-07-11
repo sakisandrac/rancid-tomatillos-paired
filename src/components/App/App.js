@@ -21,8 +21,6 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      {/* <Homepage movies={movies} error={error}/> */}
-
       <Routes>
         <Route path="/" element={<Homepage movies={movies} error={error}/>} />
         <Route path="/:id" element={<MovieDetails/>} />

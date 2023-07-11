@@ -1,11 +1,7 @@
 import './MoviePoster.css';
 import PropTypes from 'prop-types';
 
-const MoviePoster = ({title, poster, id, showMovieDetails}) => {
-
-    // const handleClick = (e) => {
-    //     showMovieDetails(e.target.id)
-    // }
+const MoviePoster = ({title, poster, id}) => {
 
     return (
         <figure className='poster'>
@@ -21,5 +17,4 @@ MoviePoster.propTypes = {
     title: PropTypes.string,
     poster: PropTypes.string,
     id: PropTypes.number,
-    // showMovieDetails: PropTypes.func
 }
