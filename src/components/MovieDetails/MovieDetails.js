@@ -3,8 +3,10 @@ import './MovieDetails.css';
 import { useEffect, useState } from 'react';
 import { getSingleMovie } from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
+import { useParams, Link } from 'react-router-dom';
 
-export const MovieDetails = ({id, toHomepage}) => {
+export const MovieDetails = () => {
+  const { id } = useParams()
 
   const [currentMovie, setCurrentMovie] = useState(null)
   const [error, setError] = useState({isError:false, message: ''})
@@ -19,13 +21,13 @@ export const MovieDetails = ({id, toHomepage}) => {
   }, [])
 
   const movieGenres = (movie) => {
-    return movie.genres.map(genre => (<p className='movie-genre'>{genre}</p>))
+    return movie.genres.map(genre => (<p key={movie.id + movie.genres.indexOf(genre)} className='movie-genre'>{genre}</p>))
   }
 
   const renderMovieDetails = () => {
     return (
       <article className='movie-details'>
-        <button onClick={toHomepage} className='back-btn'>Back</button>
+        <Link to="/"><button className='back-btn'>Back</button></Link>
         <div className='movie-backdrop-container'>
           <img className='movie-backdrop' src={currentMovie.backdrop_path}></img>
           <p className='movie-title'>{currentMovie.title}</p>
@@ -57,7 +59,3 @@ export const MovieDetails = ({id, toHomepage}) => {
   )
 }
 
-MovieDetails.propTypes = {
-  id: PropTypes.number.isRequired,
-  toHomepage: PropTypes.func.isRequired
-}
