@@ -33,4 +33,8 @@ describe('Error handling', () => {
     cy.visit('http://localhost:3000/movies')
     .get('p').last().should('have.text', "Sorry! Error: Internal Server Error. Please try again later.")
   })
+  it('Should display an error image when a user types in the wrong address with two "/"', () => {
+    cy.visit('http://localhost:3000/movies/potato')
+    .get('img')
+  })
 })
