@@ -4,7 +4,7 @@ import './ErrorPage.css'
 
 const ErrorPage = () => {
   return (
-    <img src={errorImage} className='error-img'/>
+    <img src={errorImage} className='error-img' alt="404 Error: Page Not Found"/>
   )
 }
 
