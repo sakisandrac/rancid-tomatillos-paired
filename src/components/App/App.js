@@ -5,6 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import { getMovies } from '../../apiCalls/apiCalls.js';
 import { Routes, Route } from 'react-router-dom';
 import { MovieDetails } from '../MovieDetails/MovieDetails';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const App = () => {
   const [movies, setMovies] = useState([])
@@ -24,6 +25,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage movies={movies} error={error}/>} />
         <Route path="/:id" element={<MovieDetails/>} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
