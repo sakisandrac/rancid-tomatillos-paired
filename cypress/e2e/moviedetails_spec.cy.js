@@ -2,6 +2,10 @@ describe('Movie Details Page', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      fixture: 'homepage'
+    })
       .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
         statusCode: 200,
         fixture: 'moviedetails'
@@ -10,8 +14,7 @@ describe('Movie Details Page', () => {
   })
 
   it('Should be able to see movie details page', () => {
-    //add check for URL
-    cy.get('h1').should('have.text', 'Rancid Tomatillos')
+    cy.url().should('include', '/436270')
     .get('.movie-backdrop-container').find('img')
     .get('.movie-title').contains('p', 'Black Adam')
     .get('.movie-details').contains('p', 'Action')
@@ -22,7 +25,7 @@ describe('Movie Details Page', () => {
   it('Should be able to click back button to go back to homepage', () => {
     cy.get('button').click()
     .get('.movies-container').find('.poster')
-    //add check for URL
+    .url().should('include', '/')
   })
 
   it('Should load the movie detials page with nav bar details', () => {
@@ -30,4 +33,20 @@ describe('Movie Details Page', () => {
     .get('.nav-bar').find('img')
   })
 
+})
+
+describe('Movie Details Error', () => {
+  it('Should display an error if movie details are not found', () => {
+    cy.visit('http://localhost:3000/')
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      fixture: 'homepage'
+    })
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+      statusCode: 500,
+      body: {}
+    })
+    .get('figure').first().click()
+    .get('.error').should('have.text', 'Sorry! Error: Internal Server Error. Please try again later.')
+  })
 })
