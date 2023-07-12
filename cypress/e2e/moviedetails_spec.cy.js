@@ -34,3 +34,19 @@ describe('Movie Details Page', () => {
   })
 
 })
+
+describe('Movie Details Error', () => {
+  it('Should display an error if movie details are not found', () => {
+    cy.visit('http://localhost:3000/')
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      fixture: 'homepage'
+    })
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+      statusCode: 500,
+      body: {}
+    })
+    .get('figure').first().click()
+    .get('.error').should('have.text', 'Sorry! Error: Internal Server Error. Please try again later.')
+  })
+})
