@@ -33,4 +33,12 @@ describe('Error handling', () => {
     cy.visit('http://localhost:3000/8')
     .get('.App').find('.error')
   })
+  it('Should display an error if movies are not found', () => {
+    cy.visit('http://localhost:3000');
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500,
+      body: {}
+    })
+   cy.get('.error').should('have.text', 'Sorry! Error: Internal Server Error. Please try again later.')
+  })
 })
