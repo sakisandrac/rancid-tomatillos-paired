@@ -40,6 +40,13 @@ const Homepage = ({ movies, error }) => {
 export default Homepage;
 
 Homepage.propTypes = { 
-    movies: PropTypes.arrayOf(PropTypes.object),
+    movies: PropTypes.arrayOf(PropTypes.shape({
+        average_rating: PropTypes.number,
+        backdrop_path: PropTypes.string,
+        id: PropTypes.number,
+        poster_path: PropTypes.string,
+        release_date: PropTypes.string,
+        title: PropTypes.string
+    })),
     error: PropTypes.object.isRequired
 }
