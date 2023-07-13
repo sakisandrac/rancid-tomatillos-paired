@@ -26,6 +26,9 @@
 
 .back-btn-container {
   align-self: flex-start;
+  width: 21rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .back-btn {

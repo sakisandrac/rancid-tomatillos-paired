@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 import './SearchResults.css'
 
 const SearchResults = ({ movies, showMovieDetails, clearSearch }) => {
-// console.log('movies', movies)
+
   const { terms } = useParams()
-  // console.log(terms)
 
   const filteredMovies = () => {
     const searchedName = terms.toLowerCase();

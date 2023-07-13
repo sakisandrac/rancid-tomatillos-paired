@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 3rem;
     margin: 5rem;
-    /* align-items: start; */
+    align-items: start;
 }
 
 .search-header-container {
@@ -11,7 +11,6 @@
     width: 80%;
 }
 
-
-.back-btn {
-    margin-bottom: 2rem;
+.error {
+    width: max-content;
 }

@@ -23,12 +23,14 @@ export const MovieDetails = ({ search, clearSearch }) => {
   const movieGenres = (movie) => {
     return movie.genres.map(genre => (<p key={movie.id + movie.genres.indexOf(genre)} className='movie-genre'>{genre}</p>))
   }
-console.log('searcterm', search)
+
   const renderMovieDetails = () => {
     return (
       <article className='movie-details'>
-        <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
-        {search && <Link to={`/search/${search}`}><button className='back-btn'>Back to Search</button></Link>}
+        <div className='back-btn-container'>
+          <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
+          {search && <Link to={`/search/${search}`}><button className='back-btn'>Back to Search</button></Link>}
+        </div>
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movie-backdrop-container'>
           <img className='movie-backdrop' src={currentMovie.backdrop_path}></img>
