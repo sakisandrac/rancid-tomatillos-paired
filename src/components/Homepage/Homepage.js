@@ -25,7 +25,6 @@ const Homepage = ({ movies, error }) => {
 
    return (
     <main className='main-container'>
-        <h1 className='main-header'>Rancid Tomatillos</h1>
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movies-container'>
         {!movieDetails && homePosters}

@@ -1,5 +1,6 @@
 .search-container {
     position: relative;
+    margin-right: 90px;
 }
 
 input {
@@ -9,6 +10,7 @@ input {
     border-radius: .25rem;
     padding: .75rem;
     margin: .5rem;
+    width: 200px;
     box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.2);
 }
 
@@ -20,8 +22,8 @@ button {
     border: none;
     background: transparent;
     position: absolute;
-    right: 10px;
-    top: 13px;
+    right: 12px;
+    top: 14px;
 }
 
 button:hover {
