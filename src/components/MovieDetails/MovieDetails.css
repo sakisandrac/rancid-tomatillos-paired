@@ -29,13 +29,12 @@
 }
 
 .back-btn {
-  width: 50px;
   color: white;
   background-color: #EA638C;
   border: 3px outset #EA638C;
   padding: 5px;
   height: 30px;
-  width: 100px;
+  width: 150px;
   border-radius: 10px;
   transition: .2s ease;
 }

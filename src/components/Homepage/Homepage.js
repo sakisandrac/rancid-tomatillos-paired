@@ -1,21 +1,10 @@
 import './Homepage.css'
 import MoviePoster from '../MoviePoster/MoviePoster';
-import { useState } from 'react';
 import { MovieDetails } from '../MovieDetails/MovieDetails';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const Homepage = ({ movies, error }) => {
-
-    const [movieDetails, setMovieDetails] = useState(null);
-
-    const showMovieDetails = (id) => {
-        setMovieDetails(id)
-    }
-
-    const toHomepage = () => {
-        setMovieDetails(null)
-    }
+const Homepage = ({ movies, error, movieDetails, toHomepage, showMovieDetails }) => {
 
     const homePosters = movies.map(movie => {
         return (
@@ -47,5 +36,11 @@ Homepage.propTypes = {
         release_date: PropTypes.string,
         title: PropTypes.string
     })),
-    error: PropTypes.object.isRequired
+    error: PropTypes.shape({
+        isError: PropTypes.bool,
+        message: PropTypes.string
+    }),
+    movieDetails:PropTypes.number,
+    toHomepage: PropTypes.func,
+    showMovieDetails: PropTypes.func
 }
