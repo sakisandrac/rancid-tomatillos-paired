@@ -26,14 +26,13 @@
 }
 
 .back-btn {
-  width: 50px;
   color: white;
   background-color: #EA638C;
   border: none;
   align-self: flex-start;
   padding: 5px;
   height: 30px;
-  width: 100px;
+  width: 150px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
