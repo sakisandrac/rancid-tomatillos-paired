@@ -30,7 +30,7 @@ export const MovieDetails = () => {
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movie-backdrop-container'>
           <img className='movie-backdrop' src={currentMovie.backdrop_path}></img>
-          <p className='movie-title'>{currentMovie.title}</p>
+          <h1 className='movie-title'>{currentMovie.title}</h1>
         </div>
         <div className='movie-genres-container'>
           {movieGenres(currentMovie)}
@@ -44,6 +44,7 @@ export const MovieDetails = () => {
             {currentMovie.revenue > 0 && <p><b>Revenue:</b> ${dollarUSLocale.format(currentMovie.revenue)}</p>}
           </div>
           <div className='movie-summary-container'>
+            <h2 className='tagline'>{currentMovie.tagline}</h2>
             <p className='summary'>{currentMovie.overview}</p>
           </div>
         </div>
