@@ -1,0 +1,29 @@
+.search-container {
+    position: relative;
+}
+
+input {
+    border: none;
+    color: #ffffff;
+    background: #EA638C;
+    border-radius: .25rem;
+    padding: .75rem;
+    margin: .5rem;
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.2);
+}
+
+::placeholder {
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+}
+
+button:hover {
+    cursor: pointer;
+}
