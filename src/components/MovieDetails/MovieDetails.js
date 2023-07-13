@@ -26,7 +26,7 @@ export const MovieDetails = () => {
   const renderMovieDetails = () => {
     return (
       <article className='movie-details'>
-        <Link to="/"><button className='back-btn'>Back</button></Link>
+        <Link className='back-btn-container' to="/"><button className='back-btn'>Back</button></Link>
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movie-backdrop-container'>
           <img className='movie-backdrop' src={currentMovie.backdrop_path}></img>

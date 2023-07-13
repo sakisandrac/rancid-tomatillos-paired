@@ -19,29 +19,34 @@
 }
 
 .movie-genre {
-  background-color: #EA638C;
-  padding: 5px 15px;
+  border: 3px ridge #89023E;
+  padding: 7px 18px;
   border-radius: 20px;
   margin: 10px;
+}
+
+.back-btn-container {
+  align-self: flex-start;
 }
 
 .back-btn {
   width: 50px;
   color: white;
   background-color: #EA638C;
-  border: none;
-  align-self: flex-start;
+  border: 3px outset #EA638C;
   padding: 5px;
   height: 30px;
   width: 100px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  transition: .2s ease;
 }
 
 .back-btn:hover {
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(229, 226, 226);
   color: black;
+  border: 3px inset #EA638C;
+  transform: scale(1.1);
 }
 
 .movie-backdrop-container {
@@ -49,6 +54,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-top: 20px;
 }
 
 .movie-title {
