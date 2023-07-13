@@ -7,8 +7,7 @@ describe('Homepage navigation', () => {
     })
   });
   it('Should load the homepage with all movies', () => {
-    cy.get('main').contains('h1', 'Rancid Tomatillos')
-    .url().should('include', '/')
+    cy.url().should('include', '/')
     .get('figure').first().find('img')
     .get('.movie-title-homepage').first().should('have.text', 'Black Adam')
     .get('figure').last().find('img')

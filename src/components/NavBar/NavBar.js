@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import logo from './logo.png'
+import smallLogo from './small-logo.png'
 import Search from '../Search/Search';
 
 const NavBar = () => {
@@ -11,6 +12,7 @@ const NavBar = () => {
       </div>
       <nav className='nav-bar'>
         <img className='nav-logo' src={logo} alt='Rancid Tomatillos logo'/>
+        <img className='nav-tiny-logo hidden' src={smallLogo} alt='Rancid Tomatillos logo'/>
         <Search />
       </nav>
     </div>

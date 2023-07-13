@@ -29,3 +29,9 @@ input {
 button:hover {
     cursor: pointer;
 }
+
+@media screen and (max-width: 600px){
+    .search-container {
+        margin-right: 10px;
+    }
+}

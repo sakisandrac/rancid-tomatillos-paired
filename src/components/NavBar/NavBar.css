@@ -23,9 +23,13 @@ marquee {
   justify-content: space-between;
 }
 
-.nav-logo {
+.nav-logo, .nav-tiny-logo {
   height: 90px;
   margin-left: 15px;
+}
+
+.nav-tiny-logo {
+  display: none;
 }
 
 .nav-link {
@@ -37,4 +41,18 @@ marquee {
 .nav-link:hover {
   color: #EA638C;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+  .search-container {
+    margin-right: 20px;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+  
+  .nav-tiny-logo {
+    display: block;
+  }
 }
