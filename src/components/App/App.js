@@ -6,10 +6,32 @@ import { getMovies } from '../../apiCalls/apiCalls.js';
 import { Routes, Route } from 'react-router-dom';
 import { MovieDetails } from '../MovieDetails/MovieDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import SearchResults from '../SearchResults/SearchResults';
 
 const App = () => {
   const [movies, setMovies] = useState([])
   const [error, setError] = useState({isError:false, message: ''})
+
+  const [movieDetails, setMovieDetails] = useState(0);
+
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const clearSearch = () => {
+    setSearch("")
+  }
+
+  const showMovieDetails = (id) => {
+    setMovieDetails(id)
+  }
+
+  const toHomepage = () => {
+    setMovieDetails(null)
+  }
+
 
   useEffect(() => {
     getMovies().then(data => {
@@ -19,12 +41,15 @@ const App = () => {
     .catch(err => setError({isError:true, message: err}))
   }, [])
 
+  console.log('inapp', movies)
+
   return (
     <div className="App">
-      <NavBar />
+      <NavBar movies={movies} search={search} handleSearch={handleSearch} clearSearch={clearSearch}/>
       <Routes>
-        <Route path="/" element={<Homepage movies={movies} error={error}/>} />
-        <Route path="/:id" element={<MovieDetails/>} />
+        <Route path="/" element={<Homepage movies={movies} error={error} movieDetais={movieDetails} toHomepage={toHomepage} showMovieDetails={showMovieDetails}/>} />
+        <Route path="/:id" element={<MovieDetails search={search} clearSearch={clearSearch}/>} />
+        <Route path="/search/:terms" element={<SearchResults movies={movies} showMovieDetails={showMovieDetails} clearSearch={clearSearch}/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
