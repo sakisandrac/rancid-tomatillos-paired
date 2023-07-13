@@ -37,3 +37,20 @@ marquee {
   color: #EA638C;
   cursor: pointer;
 }
+
+.search-input {
+  color: black;
+}
+
+.search-btn {
+  color: white;
+  background-color: #EA638C;
+  border: none;
+  align-self: flex-start;
+  padding: 5px;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
