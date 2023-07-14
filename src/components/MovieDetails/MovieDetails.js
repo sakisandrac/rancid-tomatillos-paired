@@ -29,7 +29,7 @@ export const MovieDetails = ({ search, clearSearch }) => {
       <article className='movie-details'>
         <div className='back-btn-container'>
           <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
-          {search && <Link to={`/search/${search}`}><button className='back-btn'>Back to Search</button></Link>}
+          {search && <Link to={`/search/${search}`}><button className='back-btn back-results'>Back to Search</button></Link>}
         </div>
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movie-backdrop-container'>
