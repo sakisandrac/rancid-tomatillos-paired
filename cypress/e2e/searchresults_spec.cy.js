@@ -18,12 +18,34 @@ describe('Search navigation', () => {
     .get('.movie-title-homepage').should('have.text', 'Black Adam')
   })
   it('Should click the movie to view details', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+      statusCode: 200,
+      fixture: 'moviedetails'
+    })
+    cy.get('input[name="search"]').type('adam{enter}')
+    .should('have.value','adam')
+    .get('figure').click()
+    .url().should('include', '/436270')
+    .get('.back-btn').first().should('have.text', 'Back to Home')
+    .get('.back-btn').last().should('have.text', 'Back to Search')
+    .get('.movie-backdrop-container').find('img')
+    .get('.movie-title').contains('h1', 'Black Adam')
+  })
+  it('Should be able to navigate back to search results', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+      statusCode: 200,
+      fixture: 'moviedetails'
+    })
     cy.get('input[name="search"]').type('adam{enter}')
     .should('have.value','adam')
     .get('figure').click()
     .url().should('include', '/436270')
     .get('.movie-backdrop-container').find('img')
     .get('.movie-title').contains('h1', 'Black Adam')
+    .get('.back-btn').last().should('have.text', 'Back to Search').click()
+    .get('h2').should('have.text', 'Results for "adam"')
+    .get('figure').find('img')
+    .get('.movie-title-homepage').should('have.text', 'Black Adam')
   })
   it('Should show an error message if no movie is found', () => {
     cy.get('input[name="search"]').type('twilight{enter}')
