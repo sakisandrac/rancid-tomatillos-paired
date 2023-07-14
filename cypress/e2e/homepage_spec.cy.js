@@ -16,6 +16,8 @@ describe('Homepage navigation', () => {
   it('Should load the homepage with nav bar details', () => {
     cy.get('marquee').contains('p', 'Explore Great Movies Today!')
     .get('.nav-bar').find('img')
+    .get('input[name="search"]').should('be.visible')
+    .get('.search-btn').find('img')
   })
 })
 
