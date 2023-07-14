@@ -30,7 +30,13 @@ a {
 
 @media screen and (max-width: 600px){
     .title {
-      display: block;
-      text-align: center;
+        display: block;
+        text-align: center;
+        background-color: #89023E;
+        padding: 1rem;
+        border-top: 2px solid #FFFFFF;
+        margin: 0px;
+        color: #FFFFFF;
+        text-shadow: 1px 3px 0 #ea638c98, 1px 13px 5px #ea638c56;
     }
   }
