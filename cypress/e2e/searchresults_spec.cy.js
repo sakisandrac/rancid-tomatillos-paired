@@ -17,5 +17,13 @@ describe('Search navigation', () => {
     .get('figure').find('img')
     .get('.movie-title-homepage').should('have.text', 'Black Adam')
   })
+  it('Should click the movie to view details', () => {
+    cy.get('input[name="search"]').type('adam{enter}')
+    .should('have.value','adam')
+    .get('figure').click()
+    .url().should('include', '/436270')
+    .get('.movie-backdrop-container').find('img')
+    .get('.movie-title').contains('h1', 'Black Adam')
+  })
 
 })
