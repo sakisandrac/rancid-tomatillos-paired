@@ -23,16 +23,18 @@ export const MovieDetails = ({ search, clearSearch }) => {
   const movieGenres = (movie) => {
     return movie.genres.map(genre => (<p key={movie.id + movie.genres.indexOf(genre)} className='movie-genre'>{genre}</p>))
   }
-console.log('searcterm', search)
+
   const renderMovieDetails = () => {
     return (
       <article className='movie-details'>
-        <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
-        {search && <Link to={`/search/${search}`}><button className='back-btn'>Back to Search</button></Link>}
+        <div className='back-btn-container'>
+          <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
+          {search && <Link to={`/search/${search}`}><button className='back-btn'>Back to Search</button></Link>}
+        </div>
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movie-backdrop-container'>
           <img className='movie-backdrop' src={currentMovie.backdrop_path}></img>
-          <p className='movie-title'>{currentMovie.title}</p>
+          <h1 className='movie-title'>{currentMovie.title}</h1>
         </div>
         <div className='movie-genres-container'>
           {movieGenres(currentMovie)}
@@ -46,6 +48,7 @@ console.log('searcterm', search)
             {currentMovie.revenue > 0 && <p><b>Revenue:</b> ${dollarUSLocale.format(currentMovie.revenue)}</p>}
           </div>
           <div className='movie-summary-container'>
+            <h2 className='tagline'>{currentMovie.tagline}</h2>
             <p className='summary'>{currentMovie.overview}</p>
           </div>
         </div>
@@ -60,7 +63,6 @@ console.log('searcterm', search)
     </>
   )
 }
-
 
 MovieDetails.propTypes = {
   search: PropTypes.string,

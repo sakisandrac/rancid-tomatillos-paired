@@ -17,6 +17,7 @@ const App = () => {
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
+    e.preventDefault()
     setSearch(e.target.value)
   }
 
@@ -31,8 +32,7 @@ const App = () => {
   const toHomepage = () => {
     setMovieDetails(null)
   }
-
-
+  
   useEffect(() => {
     getMovies().then(data => {
       setError({isError:false, message: ''})
@@ -40,8 +40,6 @@ const App = () => {
     })
     .catch(err => setError({isError:true, message: err}))
   }, [])
-
-  console.log('inapp', movies)
 
   return (
     <div className="App">

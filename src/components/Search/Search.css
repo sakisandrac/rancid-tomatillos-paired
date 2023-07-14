@@ -1,0 +1,37 @@
+.search-container {
+    position: relative;
+    margin-right: 90px;
+}
+
+input {
+    border: none;
+    color: #ffffff;
+    background: #EA638C;
+    border-radius: .25rem;
+    padding: .75rem;
+    margin: .5rem;
+    width: 200px;
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.2);
+}
+
+::placeholder {
+    color: #ffffff;
+}
+
+.search-btn {
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    .search-container {
+        margin-right: 10px;
+    }
+}

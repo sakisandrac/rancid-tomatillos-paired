@@ -20,11 +20,16 @@ marquee {
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.nav-logo {
+.nav-logo, .nav-tiny-logo {
   height: 90px;
   margin-left: 15px;
+}
+
+.nav-tiny-logo {
+  display: none;
 }
 
 .nav-link {
@@ -38,19 +43,16 @@ marquee {
   cursor: pointer;
 }
 
-.search-input {
-  color: black;
-}
+@media screen and (max-width: 600px){
+  .search-container {
+    margin-right: 20px;
+  }
 
-.search-btn {
-  color: white;
-  background-color: #EA638C;
-  border: none;
-  align-self: flex-start;
-  padding: 5px;
-  height: 30px;
-  width: 100px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
+  .nav-logo {
+    display: none;
+  }
+  
+  .nav-tiny-logo {
+    display: block;
+  }
 }

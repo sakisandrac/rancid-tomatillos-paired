@@ -2,11 +2,11 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import PropTypes from 'prop-types';
+import './SearchResults.css'
 
 const SearchResults = ({ movies, showMovieDetails, clearSearch }) => {
-console.log('movies', movies)
+
   const { terms } = useParams()
-  console.log(terms)
 
   const filteredMovies = () => {
     const searchedName = terms.toLowerCase();
@@ -25,8 +25,14 @@ console.log('movies', movies)
   
   return (
     <div>
-      <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
-      {filteredMovies().length > 0 ? searchedMovies : <p className='error'>No movies were found, try searching again!</p>}
+      <div className='search-header-container'>
+        <Link to="/"><button className='back-btn' onClick={clearSearch}>Back to Home</button></Link>
+        <h2>Results for "{`${terms}`}"</h2>
+        <hr></hr>
+      </div>
+      <div className='search-results-container'>
+        {filteredMovies().length > 0 ? searchedMovies : <p className='error'>No movies were found, try searching again!</p>}
+      </div>
     </div>
   )
 }

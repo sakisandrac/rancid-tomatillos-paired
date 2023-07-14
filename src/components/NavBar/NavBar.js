@@ -1,6 +1,8 @@
 import React from 'react';
 import './NavBar.css';
 import logo from './logo.png'
+import smallLogo from './small-logo.png'
+import Search from '../Search/Search';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -13,10 +15,8 @@ const NavBar = ({ search, handleSearch }) => {
       </div>
       <nav className='nav-bar'>
         <Link to="/"><img className='nav-logo' src={logo} alt='Rancid Tomatillos logo' /></Link>
-        <div className='search-container'>
-          <input className='search-input' type='text' onChange={(e) => { handleSearch(e) }} value={search} name="search" placeholder="Search Titles"></input>
-          <Link to={`/search/${search}`}><button className='search-btn' >Search</button></Link>
-        </div>
+        <Link to="/"><img className='nav-tiny-logo hidden' src={smallLogo} alt='Rancid Tomatillos logo'/></Link>
+        <Search handleSearch={handleSearch} search={search}/>
       </nav>
     </div>
   )
