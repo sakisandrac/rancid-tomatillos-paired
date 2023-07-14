@@ -4,11 +4,11 @@ import { MovieDetails } from '../MovieDetails/MovieDetails';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Homepage = ({ movies, error, movieDetails, toHomepage, showMovieDetails }) => {
+const Homepage = ({ clearSearch, movies, error, movieDetails, showMovieDetails }) => {
 
     const homePosters = movies.map(movie => {
         return (
-            <Link to={`/${movie.id}`} key={movie.id} ><MoviePoster title={movie.title} poster={movie.poster_path} id={movie.id} showMovieDetails={showMovieDetails}/></Link>
+            <Link onClick={clearSearch} to={`/${movie.id}`} key={movie.id} ><MoviePoster title={movie.title} poster={movie.poster_path} id={movie.id} showMovieDetails={showMovieDetails}/></Link>
         )
     })
 
@@ -19,7 +19,7 @@ const Homepage = ({ movies, error, movieDetails, toHomepage, showMovieDetails })
         {!movieDetails && homePosters}
         </div>
         <div className='current-movie-container'>
-        {movieDetails && <MovieDetails id={movieDetails} toHomepage={toHomepage} />}
+        {/* {movieDetails && <MovieDetails id={movieDetails} toHomepage={toHomepage} />} */}
         </div>
     </main>
     )
@@ -41,6 +41,6 @@ Homepage.propTypes = {
         message: PropTypes.string
     }),
     movieDetails:PropTypes.number,
-    toHomepage: PropTypes.func,
+    clearSearch: PropTypes.func,
     showMovieDetails: PropTypes.func
 }
