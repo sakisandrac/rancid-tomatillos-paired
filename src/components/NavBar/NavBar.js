@@ -26,6 +26,7 @@ export default NavBar
 
 NavBar.propTypes = {
   search: PropTypes.string,
-  handleSearch: PropTypes.func
+  handleSearch: PropTypes.func,
+  clearSearch: PropTypes.func
 }
 

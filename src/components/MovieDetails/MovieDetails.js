@@ -66,6 +66,6 @@ export const MovieDetails = ({ search, clearSearch }) => {
 
 MovieDetails.propTypes = {
   search: PropTypes.string,
-  handleSearch: PropTypes.func
+  clearSearch: PropTypes.func
 }
 
