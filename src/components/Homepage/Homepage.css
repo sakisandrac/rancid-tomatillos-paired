@@ -10,6 +10,10 @@
     align-items: start;
 }
 
+.title {
+    display: none;
+  }
+
 .error {
     text-align: center;
     font-size: 2rem;
@@ -23,3 +27,10 @@
 a {
     text-decoration: none;
 }
+
+@media screen and (max-width: 600px){
+    .title {
+      display: block;
+      text-align: center;
+    }
+  }
