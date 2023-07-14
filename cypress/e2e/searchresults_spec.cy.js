@@ -25,5 +25,9 @@ describe('Search navigation', () => {
     .get('.movie-backdrop-container').find('img')
     .get('.movie-title').contains('h1', 'Black Adam')
   })
-
+  it('Should show an error message if no movie is found', () => {
+    cy.get('input[name="search"]').type('twilight{enter}')
+    .get('h2').should('have.text', 'Results for "twilight"')
+    .get('.error').should('have.text', 'No movies were found, try searching again!')
+  })
 })
