@@ -1,10 +1,14 @@
 describe('Search navigation', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+    cy.visit('http://localhost:3000/')
+    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 200,
       fixture: 'homepage'
     })
+      .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
+        statusCode: 200,
+        fixture: 'moviedetails'
+      })
   })
   it('Should use the searchbar to search for a movie', () => {
     cy.get('input[name="search"]')
@@ -18,10 +22,6 @@ describe('Search navigation', () => {
     .get('.movie-title-homepage').should('have.text', 'Black Adam')
   })
   it('Should click the movie to view details', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
-      statusCode: 200,
-      fixture: 'moviedetails'
-    })
     cy.get('input[name="search"]').type('adam{enter}')
     .should('have.value','adam')
     .get('figure').click()
@@ -32,10 +32,6 @@ describe('Search navigation', () => {
     .get('.movie-title').contains('h1', 'Black Adam')
   })
   it('Should be able to navigate back to search results', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
-      statusCode: 200,
-      fixture: 'moviedetails'
-    })
     cy.get('input[name="search"]').type('adam{enter}')
     .should('have.value','adam')
     .get('figure').click()
@@ -46,6 +42,15 @@ describe('Search navigation', () => {
     .get('h2').should('have.text', 'Results for "adam"')
     .get('figure').find('img')
     .get('.movie-title-homepage').should('have.text', 'Black Adam')
+  })
+  it('Should be able to navigate back to home after clicking a searched movie', () => {
+    cy.get('input[name="search"]').type('adam{enter}')
+    .get('h2').should('have.text', 'Results for "adam"')
+    .get('.back-btn').first().should('have.text', 'Back to Home').click()
+    .get('figure').first().find('img')
+    .get('.movie-title-homepage').first().should('have.text', 'Black Adam')
+    .get('figure').last().find('img')
+    .get('.movie-title-homepage').last().should('have.text', 'X')
   })
   it('Should show an error message if no movie is found', () => {
     cy.get('input[name="search"]').type('twilight{enter}')
