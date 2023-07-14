@@ -14,6 +14,7 @@ const Homepage = ({ clearSearch, movies, error, movieDetails, showMovieDetails }
 
    return (
     <main className='main-container'>
+        <h1 className='title'>RANCID TOMATILLOS</h1>
         {error.isError && <p className='error'>{`Sorry! ${error.message}. Please try again later.`}</p>}
         <div className='movies-container'>
         {!movieDetails && homePosters}

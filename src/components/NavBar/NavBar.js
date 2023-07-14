@@ -15,7 +15,7 @@ const NavBar = ({ search, handleSearch, clearSearch }) => {
       </div>
       <nav className='nav-bar'>
         <Link to="/"><img onClick={clearSearch} className='nav-logo' src={logo} alt='Rancid Tomatillos logo' /></Link>
-        <Link to="/"><img onClick={clearSearch} className='nav-tiny-logo hidden' src={smallLogo} alt='Rancid Tomatillos logo'/></Link>
+        <Link to="/"><img onClick={clearSearch} className='nav-tiny-logo' src={smallLogo} alt='Rancid Tomatillos logo'/></Link>
         <Search handleSearch={handleSearch} search={search}/>
       </nav>
     </div>
