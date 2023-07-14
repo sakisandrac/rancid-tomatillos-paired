@@ -1,7 +1,8 @@
-import React from 'react'
-import './Search.css'
-import searchSymbol from './search-symbol.png'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Search.css';
+import searchSymbol from './search-symbol.png';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Search = ({search, handleSearch}) => {
 
@@ -28,3 +29,9 @@ const Search = ({search, handleSearch}) => {
 }
 
 export default Search
+
+Search.propTypes = {
+  search: PropTypes.string,
+  handleSearch: PropTypes.func
+}
+
