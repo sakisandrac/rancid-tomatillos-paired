@@ -66,6 +66,7 @@ export const MovieDetails = ({ submitSearch, search, clearSearch }) => {
 
 MovieDetails.propTypes = {
   search: PropTypes.string,
-  clearSearch: PropTypes.func
+  clearSearch: PropTypes.func,
+  submitSearch: PropTypes.bool
 }
 
