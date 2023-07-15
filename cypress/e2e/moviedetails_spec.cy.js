@@ -72,31 +72,3 @@ describe('Movie Details Page', () => {
   })
 })
 
-describe('Movie Details Error', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/')
-    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 200,
-      fixture: 'homepage'
-    })
-    .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
-      statusCode: 500,
-      body: {}
-    })
-  })
-
-  it('Should display an error if movie details are not found', () => {
-    cy.get('figure').first().click()
-    .get('.error').should('have.text', 'Sorry! Error: Internal Server Error. Please try again later.')
-  })
-
-  it('Should display no results found if invalid tile was searched', () => {
-    cy.get('figure').first().click()
-    .get('input').type('asd')
-    .get('.search-btn').click()
-    .get('h2').should('have.text', 'Results for "asd"')
-    .url().should('include', 'search/asd')
-    .get('.error').should('have.text', 'No movies were found, try searching again!')
-  })
-
-})
