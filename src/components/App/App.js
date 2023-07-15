@@ -22,11 +22,13 @@ const App = () => {
 
   const submitSearchTerm = () => {
     setSubmitSearch(true)
+    console.log('set submit')
   }
 
   const clearSearch = () => {
     setSearch("")
     setSubmitSearch(false)
+    
   }
 
   const showMovieDetails = (id) => {
@@ -50,7 +52,7 @@ const App = () => {
       <NavBar movies={movies} submitSearchTerm={submitSearchTerm} search={search} handleSearch={handleSearch} clearSearch={clearSearch}/>
       <Routes>
         <Route path="/" element={<Homepage clearSearch={clearSearch} movies={movies} error={error} movieDetais={movieDetails} toHomepage={toHomepage} showMovieDetails={showMovieDetails}/>} />
-        <Route path="/:id" element={<MovieDetails search={search} clearSearch={clearSearch}/>} />
+        <Route path="/:id" element={<MovieDetails submitSearch={submitSearch} search={search} clearSearch={clearSearch}/>} />
         <Route path="/search/:terms" element={<SearchResults movies={movies} showMovieDetails={showMovieDetails} clearSearch={clearSearch}/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
