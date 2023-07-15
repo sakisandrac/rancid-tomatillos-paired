@@ -6,7 +6,7 @@ import Search from '../Search/Search';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ search, handleSearch, clearSearch }) => {
+const NavBar = ({submitSearchTerm, search, handleSearch, clearSearch }) => {
 
   return (
     <div className='nav-container'>
@@ -16,7 +16,7 @@ const NavBar = ({ search, handleSearch, clearSearch }) => {
       <nav className='nav-bar'>
         <Link to="/"><img onClick={clearSearch} className='nav-logo' src={logo} alt='Rancid Tomatillos logo' /></Link>
         <Link to="/"><img onClick={clearSearch} className='nav-tiny-logo' src={smallLogo} alt='Rancid Tomatillos logo'/></Link>
-        <Search handleSearch={handleSearch} search={search}/>
+        <Search submitSearchTerm={submitSearchTerm} handleSearch={handleSearch} search={search}/>
       </nav>
     </div>
   )
@@ -25,6 +25,7 @@ const NavBar = ({ search, handleSearch, clearSearch }) => {
 export default NavBar
 
 NavBar.propTypes = {
+  submitSearchTerm: PropTypes.func,
   search: PropTypes.string,
   handleSearch: PropTypes.func,
   clearSearch: PropTypes.func

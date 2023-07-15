@@ -20,7 +20,6 @@ const Homepage = ({ clearSearch, movies, error, movieDetails, showMovieDetails }
         {!movieDetails && homePosters}
         </div>
         <div className='current-movie-container'>
-        {/* {movieDetails && <MovieDetails id={movieDetails} toHomepage={toHomepage} />} */}
         </div>
     </main>
     )

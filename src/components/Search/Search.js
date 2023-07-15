@@ -4,7 +4,7 @@ import searchSymbol from './search-symbol.png';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Search = ({search, handleSearch}) => {
+const Search = ({submitSearchTerm, search, handleSearch}) => {
 
   const handleForm = (e) => {
     e.preventDefault()
@@ -14,7 +14,7 @@ const Search = ({search, handleSearch}) => {
   const renderIcon = () => <button className='search-btn' type='submit'><img src={searchSymbol} alt='search icon'/></button>
 
   const renderLink = () => {
-    return <Link to={`/search/${search}`}><button className='search-btn' type='submit'><img src={searchSymbol} alt='search icon'/></button></Link>
+    return <Link to={`/search/${search}`}><button onClick={submitSearchTerm} className='search-btn' type='submit'><img src={searchSymbol} alt='search icon'/></button></Link>
   }
 
   return (
@@ -31,6 +31,7 @@ const Search = ({search, handleSearch}) => {
 export default Search
 
 Search.propTypes = {
+  submitSearchTerm: PropTypes.func,
   search: PropTypes.string,
   handleSearch: PropTypes.func
 }
