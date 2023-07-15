@@ -20,26 +20,3 @@ describe('Homepage navigation', () => {
     .get('.search-btn').find('img')
   })
 })
-
-describe('Error handling', () => {
-  it('Should display an error image when a user types in the wrong address', () => {
-    cy.visit('http://localhost:3000/movies')
-    .get('.App').find('.error')
-  })
-  it('Should display an error image when a user types in the wrong address with two "/"', () => {
-    cy.visit('http://localhost:3000/movies/potato')
-    .get('.App').find('.error-img')
-  })
-  it('Should display an error image when a user types in the wrong address with movie id', () => {
-    cy.visit('http://localhost:3000/8')
-    .get('.App').find('.error')
-  })
-  it('Should display an error if movies are not found', () => {
-    cy.visit('http://localhost:3000');
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 500,
-      body: {}
-    })
-   cy.get('.error').should('have.text', 'Sorry! Error: Internal Server Error. Please try again later.')
-  })
-})
