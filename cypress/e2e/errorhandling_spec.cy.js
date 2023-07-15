@@ -1,9 +1,5 @@
 describe('Error handling', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 200,
-      fixture: 'homepage'
-    }).as('getHomepage')
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/888', {
       statusCode: 404,
       body: {}
