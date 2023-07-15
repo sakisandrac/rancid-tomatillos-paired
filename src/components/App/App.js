@@ -9,20 +9,24 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import SearchResults from '../SearchResults/SearchResults';
 
 const App = () => {
-  const [movies, setMovies] = useState([])
-  const [error, setError] = useState({isError:false, message: ''})
-
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState({isError:false, message: ''});
   const [movieDetails, setMovieDetails] = useState(0);
-
   const [search, setSearch] = useState("");
+  const [submitSearch, setSubmitSearch] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault()
     setSearch(e.target.value)
   }
 
+  const submitSearchTerm = () => {
+    setSubmitSearch(true)
+  }
+
   const clearSearch = () => {
     setSearch("")
+    setSubmitSearch(false)
   }
 
   const showMovieDetails = (id) => {
@@ -43,7 +47,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar movies={movies} search={search} handleSearch={handleSearch} clearSearch={clearSearch}/>
+      <NavBar movies={movies} submitSearchTerm={submitSearchTerm} search={search} handleSearch={handleSearch} clearSearch={clearSearch}/>
       <Routes>
         <Route path="/" element={<Homepage clearSearch={clearSearch} movies={movies} error={error} movieDetais={movieDetails} toHomepage={toHomepage} showMovieDetails={showMovieDetails}/>} />
         <Route path="/:id" element={<MovieDetails search={search} clearSearch={clearSearch}/>} />
