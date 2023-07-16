@@ -22,13 +22,11 @@ const App = () => {
 
   const submitSearchTerm = () => {
     setSubmitSearch(true)
-    console.log('set submit')
   }
 
   const clearSearch = () => {
     setSearch("")
     setSubmitSearch(false)
-    
   }
 
   const showMovieDetails = (id) => {
