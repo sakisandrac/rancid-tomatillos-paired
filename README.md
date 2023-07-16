@@ -1,5 +1,5 @@
 # Rancid Tomatillos
-This application allows users to view a list movies, and get details about each individual movie. Users can also search through movies to by title.
+This application allows users to view a list movies, and get details about each individual movie. Users can also search through movies to by title. Visit us <a href="https://rancid-tomatillos-paired-ashy.vercel.app/">here</a>!
 
 ## Technologies Used
 React, React router v6, create-react-app, CSS, HTML, JavaScript, Cypress
@@ -15,7 +15,9 @@ At the time of this project, we are students at Turing School of Software Engine
 The biggest challenge we faced on this project was testing with Cypress. In order to test our application, we created mock data in a fixture, and intercepted all API calls. We had the biggest issue with timing- sometimes our calls would stub correctly, but other times the fetch requests would still go through. We managed to fix this by implementing aliases and "wait" in our Cypress tests.
 
 ## Project Preview
-![rancid-preview1](https://github.com/sakisandrac/rancid-tomatillos-paired/assets/118419729/929d4441-2ccb-4105-a37a-4d6ea14903a6)
+![rancid-preview1](public/rancid-toms.gif)
+
+![rancid-preview2](https://github.com/sakisandrac/rancid-tomatillos-paired/assets/118419729/929d4441-2ccb-4105-a37a-4d6ea14903a6)
 
 ## Set up
 1. Fork or clone down this respository. 
